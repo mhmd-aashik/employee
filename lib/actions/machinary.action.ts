@@ -93,3 +93,12 @@ export const updateMachinary = async (machinary: MachinaryEditProps) => {
     console.log(error);
   }
 };
+
+export const deleteMachinary = async (id: string) => {
+  try {
+    await dbConnect();
+    await Machinery.findByIdAndDelete(id);
+  } catch (error) {
+    console.log(error);
+  }
+};
