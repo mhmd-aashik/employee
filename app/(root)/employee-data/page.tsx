@@ -22,8 +22,9 @@ const Page = async () => {
   console.log(employeeData, "from page");
 
   return (
-    <div>
-      <div className="px-2 py-5 flex justify-between max-w-7xl items-center">
+    <div className="container mx-auto px-4">
+      {/* Header Section */}
+      <div className="px-2 py-5 flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0">
         <h1 className="text-3xl font-bold">All Employees</h1>
         <Link
           href="/create-emp"
@@ -32,7 +33,9 @@ const Page = async () => {
           Create Employee
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+
+      {/* Employee Cards Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {employeeData?.map((employee: Employee) => (
           <EmployeesCard
             key={employee._id}

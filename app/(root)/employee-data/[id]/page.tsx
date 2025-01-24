@@ -31,8 +31,6 @@ const SigleCard = async ({
     createdAt,
   } = getSingleData;
 
-  console.log(getSingleData, "from edit page");
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-10 px-6">
       <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-8 text-center">

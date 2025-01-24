@@ -15,15 +15,8 @@ const EditEmployee = async ({
 
   const getEmployee = await getEmployeeById(id);
 
-  console.log(getEmployee, "from edit page");
-
   return (
-    <div className="flex flex-col items-center justify-start w-full h-screen">
-      <div>
-        <h1 className="text-3xl font-bold text-center hidden">
-          Create Employee
-        </h1>
-      </div>
+    <div className="">
       <EditEmployeeCard
         id={id}
         name={getEmployee?.name}

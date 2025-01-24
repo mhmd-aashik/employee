@@ -143,7 +143,7 @@ const EditEmployeeCard = ({
   }
 
   return (
-    <div className="flex flex-col items-center justify-start mt-20 w-full min-h-screen bg-gray-50">
+    <div className="flex flex-col items-center justify-start mt-20 w-full min-h-screen ">
       <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
         Edit Employee Card
       </h1>
