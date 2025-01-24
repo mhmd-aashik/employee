@@ -1,3 +1,4 @@
+import DeleteMachine from "@/components/DeleteMachine";
 import { Button } from "@/components/ui/button";
 import { getMachinaryById } from "@/lib/actions/machinary.action";
 import Link from "next/link";
@@ -99,22 +100,12 @@ const MaintenancePage = async ({
         </div>
         <div className="mt-6 flex justify-end space-x-4">
           <Link href={`/edit-machine/${id}`}>
-            <Button
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
-              // onClick={() => alert('Edit functionality coming soon!')}
-            >
+            <Button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
               Edit
             </Button>
           </Link>
 
-          <Link href={``}>
-            <Button
-              className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
-              // onClick={() => alert('Delete functionality coming soon!')}
-            >
-              Delete
-            </Button>
-          </Link>
+          <DeleteMachine />
         </div>
       </div>
     </div>

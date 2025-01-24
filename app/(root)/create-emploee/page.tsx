@@ -107,7 +107,7 @@ const CreateEmployee = () => {
       console.log(data, "from client");
 
       form.reset();
-      router.push("/employees");
+      router.push("/employee-data");
     } catch (error) {
       console.error(error);
     }
