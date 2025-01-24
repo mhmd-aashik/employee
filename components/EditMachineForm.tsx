@@ -19,7 +19,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Checkbox } from "@/components/ui/checkbox";
 import { updateMachinary } from "@/lib/actions/machinary.action";
 import { usePathname, useRouter } from "next/navigation";
-import { FormSchema } from "@/app/(root)/create-machinary/page";
 
 interface EditMachinaryProps {
   machineId: string;
@@ -33,18 +32,36 @@ interface EditMachinaryProps {
   status: TaskStatus;
 }
 
-export enum MaintenanceStatus {
+enum MaintenanceStatus {
   OPERATIONAL = "OPERATIONAL",
   UNDER_MAINTENANCE = "UNDER_MAINTENANCE",
   REPAIR_NEEDED = "REPAIR_NEEDED",
 }
 
-export enum TaskStatus {
+enum TaskStatus {
   PENDING = "PENDING",
   IN_PROGRESS = "IN_PROGRESS",
   COMPLETED = "COMPLETED",
   CANCELLED = "CANCELLED",
 }
+
+const FormSchema = z.object({
+  name: z.string().min(1, "Name must not be empty").optional(),
+  type: z.string().min(1, "Type is required."),
+  maintenanceStatus: z.nativeEnum(MaintenanceStatus, {
+    errorMap: () => ({ message: "Select a valid maintenance status." }),
+  }),
+  lastMaintenanceDate: z.date().optional(),
+
+  predictiveMaintenanceRequired: z.boolean(),
+  scheduledDate: z
+    .date()
+    .min(new Date(), "Scheduled date must be in the future."),
+  maintenanceType: z.string().min(1, "Maintenance Type is required."),
+  status: z.nativeEnum(TaskStatus, {
+    errorMap: () => ({ message: "Select a valid task status." }),
+  }),
+});
 
 const EditMachineForm = ({
   machineId,
