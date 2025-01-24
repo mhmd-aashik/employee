@@ -23,7 +23,6 @@ const Page = async () => {
 
   return (
     <div className="container mx-auto px-4">
-      {/* Header Section */}
       <div className="px-2 py-5 flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0">
         <h1 className="text-3xl font-bold">All Employees</h1>
         <Link
