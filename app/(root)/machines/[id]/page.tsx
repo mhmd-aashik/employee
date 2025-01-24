@@ -18,9 +18,9 @@ import React from "react";
 const MaintenancePage = async ({
   params,
 }: {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }) => {
   const { id } = await params;
 
