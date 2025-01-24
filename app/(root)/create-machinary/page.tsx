@@ -38,7 +38,7 @@ enum TaskStatus {
   CANCELLED = "CANCELLED",
 }
 
-export const FormSchema = z.object({
+const FormSchema = z.object({
   name: z.string().min(1, "Name must not be empty").optional(),
   type: z.string().min(1, "Type is required."),
   maintenanceStatus: z.nativeEnum(MaintenanceStatus, {
