@@ -37,29 +37,31 @@ const EmployeesCard = ({
   return (
     <Link
       href={`employee-data/${editPath}`}
-      className="max-w-lg mx-auto rounded-xl shadow-lg overflow-hidden border border-gray-300 hover:shadow-2xl transition-shadow duration-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+      className="w-80 h-64 mx-auto rounded-xl shadow-lg overflow-hidden border border-gray-300 hover:shadow-2xl transition-shadow duration-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
     >
-      <div className="p-8">
-        <div className="flex items-center space-x-6 mb-6">
+      <div className="p-6 h-full flex flex-col justify-between">
+        {/* Profile Image and Info */}
+        <div className="flex items-center space-x-6 mb-4">
           <img
             src="https://cdn4.iconfinder.com/data/icons/job-resume-9/100/job_work_office-15-512.png"
             alt="profile"
-            className="w-20 h-20 rounded-full border-4 border-white shadow-lg"
+            className="w-16 h-16 rounded-full border-4 border-white shadow-lg"
           />
           <div>
-            <h3 className="text-2xl font-bold text-white">{name}</h3>
+            <h3 className="text-xl font-bold text-white">{name}</h3>
             <p className="text-sm text-gray-200 uppercase tracking-wide">
               {position}
             </p>
           </div>
         </div>
 
+        {/* Card Details */}
         <div className="text-white">
-          <p className="text-lg">
+          <p className="text-base">
             <span className="font-semibold">Skills:</span> {skillset}
           </p>
           <p
-            className={`mt-4 text-lg font-bold ${
+            className={`mt-4 text-base font-bold ${
               availablestatus ? "text-green-400" : "text-red-400"
             }`}
           >
