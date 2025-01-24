@@ -92,7 +92,7 @@ const CreateMachine = () => {
       console.log("Form data submitted:", data);
 
       form.reset();
-      router.push("/employees");
+      router.push("/machines");
     } catch (error) {
       console.error(error);
     }
