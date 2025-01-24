@@ -25,13 +25,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { createMachinary } from "@/lib/actions/machinary.action";
 import { usePathname, useRouter } from "next/navigation";
 
-export enum MaintenanceStatus {
+enum MaintenanceStatus {
   OPERATIONAL = "OPERATIONAL",
   UNDER_MAINTENANCE = "UNDER_MAINTENANCE",
   REPAIR_NEEDED = "REPAIR_NEEDED",
 }
 
-export enum TaskStatus {
+enum TaskStatus {
   PENDING = "PENDING",
   IN_PROGRESS = "IN_PROGRESS",
   COMPLETED = "COMPLETED",
@@ -55,7 +55,6 @@ export const FormSchema = z.object({
     errorMap: () => ({ message: "Select a valid task status." }),
   }),
 });
-
 
 const CreateMachine = () => {
   const pathname = usePathname();
