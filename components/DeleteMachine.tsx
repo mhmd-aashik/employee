@@ -1,13 +1,17 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
 import { deleteMachinary } from "@/lib/actions/machinary.action";
+import { useRouter } from "next/navigation";
 
-const DeleteMachine = () => {
-  const id = "some-id"; // Define the id here
+const DeleteMachine = ({ id }: { id: string }) => {
+  const router = useRouter();
 
   async function handledeleteMachine() {
     try {
       await deleteMachinary(id);
+      router.push("/machines");
+      console.log("delete machine", id);
     } catch (error) {
       console.error(error);
     }

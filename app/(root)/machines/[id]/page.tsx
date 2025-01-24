@@ -105,7 +105,7 @@ const MaintenancePage = async ({
             </Button>
           </Link>
 
-          <DeleteMachine />
+          <DeleteMachine id={id.toString()} />
         </div>
       </div>
     </div>
