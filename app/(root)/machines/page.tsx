@@ -19,7 +19,7 @@ const Page = async () => {
           All Machinaries
         </h1>
         <Link
-          href="/create-emp"
+          href="/create-machinary"
           className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300 text-sm sm:text-base"
         >
           Create Machinaries
